@@ -6,7 +6,6 @@ for i in range(n-1):
         if myArr[j] > myArr[j+1]:
             myArr[j], myArr[j+1] = myArr[j+1], myArr[j]
             
-
 print("Sorted Array:", myArr)
         
     
