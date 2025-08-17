@@ -1,33 +1,34 @@
-import getpass
+import getpass as gp
 
 def register():
     print("===Register===")
     username = input("Enter your username:")
-    pin = getpass.getpass("Enter your PIN:")
+    pin = gp.getpass("Enter your PIN:")
     
     if pin.isdigit() and len(pin) == 4:
         print("PIN Accepted. Ready to log-in!")
+        print(username, "\n", pin)
         return username, pin
-        
+
     else:
         print("Invalid input. please exactly put 4 digits")
         return None, None
+   
         
-def login(storedPin, storedUsername):
+def login(username, pin):
     while True:
         print("===LOGIN===")
         userUsernameInput = input("Enter your username:")
-        userPinInput = getpass.getpass("Enter your PIN:")
+        userPinInput = gp.getpass("Enter your PIN:")
     
-        if userUsernameInput != storedUsername:
+        if userUsernameInput != username:
             print("Incorrect username, please be sure you registered your account.")
             break
         
-        if userPinInput != storedPin:
+        if userPinInput != pin:
             print("Incorrect PIN input!")
             break
         
-    
         print("Login Successful!")
         break
         
