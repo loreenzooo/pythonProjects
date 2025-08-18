@@ -1,20 +1,19 @@
 def LinearSearch(myArr, targetValue):
-    for value in myArr:
+    for index, value in enumerate(myArr):
         if value == targetValue:
-            return 1
+            return index
     return -1
 
 
 myArr  = [5, 3, 8, 7]
-targetValue = 3
-n = myArr
+targetValue = 7
 
 result = LinearSearch(myArr, targetValue)
 
-if result != 1:
-    print("Not Found!")
+if result != -1:
+    print(f"Found at index: {result}")
 else:
-    print("Found")
+    print("Not Found!")
 
 
         
